@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maria's Opera Page</title>
+    <style>
+      body {
+        margin: 0 auto;
+        text-align: center;
+        background: linear-gradient(to bottom, #feffff 0%, #d2ebf9 100%);
+        color: #120d5e;
+      }
+      .operajpeg {
+        max-width: 50%;
+        border: 2px solid rgba(0, 0, 0, 0);
+        border-radius: 20px;
+      }
+      h1 {
+        margin: 15px auto 40px auto;
+        font-family: "Goudy Bookletter 1911", sans-serif;
+        font-size: 40px;
+        border: 1px solid black;
+        padding: 15px 20px;
+        max-width: 48%;
+        border-radius: 15px;
+        font-weight: 600;
+      }
+      h2 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 100;
+      }
+      h3 {
+        font-weight: 600;
+        font-size: 20px;
+      }
+      .intro,
+      .synopsis {
+        text-align: center;
+        max-width: 40%;
+        margin: 0 auto;
+        line-height: 26px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #0b3598;
+      }
+      hr {
+        max-width: 50%;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+      button {
+        padding: 20px 30px;
+        margin: 20px 20px;
+        border: 4px solid #ddb88c;
+        border-radius: 50px;
+        background: #ddb88c;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 40px 0 #ddb88c;
+        font-size: 18px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif sans-serif;
+      }
+      button:hover {
+        background: #a6d3e2;
+        cursor: pointer;
+        border: 4px solid rgba(0, 0, 0, 0);
+      }
+      a {
+        font-size: 18px;
+      }
+      .coder {
+        font-size: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        opacity: 0.7;
+        color: black;
+        margin-top: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>You must go see the Opera...</h1>
+
+      <h2>and Mozart's <em> Le Nozze di Figaro</em> is the perfect opera!</h2>
+      <img
+        class="operajpeg"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/108/384/original/1600x685_figaropdp.jpg?1703610799"
+        alt="An image of an opera performance at the Metropolitan Opera"
+      />
+      <br />
+      <span class="description">
+        <em>
+          A production of The Marriage of Figaro at The Metropolitan Opera</em
+        ></span
+      >
+      <hr />
+
+      <h3>Laugh and Marvel with Mozart's Beloved Comic Gem</h3>
+
+      <p class="intro">
+        If you've never seen an opera before then you have to start with
+        Mozart’s famous Le Nozze di Figaro (The Marriage of Figaro). This 1786
+        Italian comic opera has entertained people for ages with its hilarious
+        story, beautiful music, and crazy characters.
+      </p>
+      <br />
+
+      <p class="synopsis">
+        You'll follow Figaro the clever servant on his big wedding day as he
+        tries to outsmart the meddling Count determined to ruin his marriage
+        plans. The fast-paced music, lavish costumes, and even a wild dance
+        party will have you captivated throughout. Le Nozze di Figaro takes you
+        through a musical journey of arias, duets and choruses that make falling
+        in love with Opera super easy and fun!
+      </p>
+
+      <br />
+
+      <button>Book a seat now!</button>
+      <br />
+
+      <span>
+        <em>
+          <a
+            href="https://www.eno.org/discover-opera/the-beginners-guide-to-opera/"
+            target="_blank"
+          >
+            Click here
+          </a>
+          to know more about Opera Music.
+        </em>
+      </span>
+
+      <div class="coder">Coded by Maria Kapatwa</div>
+    </div>
+    <script>
+      function operaBooking() {
+        let username = prompt("Hi there! What's your name?");
+        let followup = prompt(
+          `Have you been to the Opera before, ${username}?`
+        );
+
+        followup = followup.toLowerCase();
+        followup = followup.replace("yep", "yes");
+        followup = followup.replace("nope", "no");
+
+        if (followup.toLowerCase() === "yes") {
+          prompt(
+            `Great, ${username}! Leave your email below to make a booking 👇🏾`
+          );
+        } else if (followup.toLowerCase() === "no") {
+          prompt(
+            `Awesome, ${username}! Leave your email to enjoy our newbie discount on your booking! 🫶🏾`
+          );
+        }
+        alert(`Thanks for stopping by ${username}, we'll be in touch soon!`);
+      }
+
+      let button = document.querySelector("button");
+      button.addEventListener("click", operaBooking);
+    </script>
+  </body>
+</html>
